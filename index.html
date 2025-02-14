@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 5;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 150%;
+            max-width: 1200px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .sidebar {
+            flex: 3;
+            background: #f0f0f0;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar a {
+            display: block;
+            margin: 10px 0;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            flex: 7;
+            padding: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="title">Tổng hợp bài tập html</header>
+        <div class="content">
+            <aside class="sidebar">
+                <h2>Danh mục bài tập</h2>
+                <a href="content/file1.html"target="contentFrame">Gioithieubanthan</a>
+                <a href="content/file2.html"target='contentFrame'>TKB</a>
+                <a href="content/file3.html"target='contentFrane'>Yt</a>            
+            </aside>
+            <main class="main-content">
+                <iframe src="" name="contentFrame" title="baitap"></iframe>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function loadContent(event, file) {
+            event.preventDefault(); 
+            const iframe = document.getElementById('contentFrame');
+            iframe.src = file;
+        }
+    </script>
+</body>
+</html>
