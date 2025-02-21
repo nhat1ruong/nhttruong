@@ -5,5 +5,5 @@ functuon login()
    if (u=="thao" && p=="man")
    {
      window.open("home.html")
-     document getElementById(compiler).style.display="block"
+     document.getElementById(compiler).style.display="block"
    }
