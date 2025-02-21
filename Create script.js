@@ -1,4 +1,4 @@
-functuon login()
+function login()
 {
    let u = username.value
    let p = pw.value
